@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 align="center" mat-dialog-title>AGREGAR CURSOS</h1>
+  <div >
+    <form [formGroup]="formulario" (ngSubmit)="agregarCurso()">
+    <div class="row">
+      <mat-form-field  class="col-md-12" >
+        <mat-label>Nombre</mat-label>
+        <input matInput  formControlName="nombre"/>
+      </mat-form-field>
+      <mat-form-field class="col-md-12" >
+      <mat-label>Comision</mat-label>
+        <input matInput formControlName="comision"/>
+      </mat-form-field>
+       <mat-form-field class="col-md-6">
+        <mat-label>Fecha Inicio</mat-label>
+        <input matInput [matDatepicker]="fechaInicio" formControlName="fechaInicio"/>
+        <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
+        <mat-datepicker #fechaInicio></mat-datepicker>
+      </mat-form-field>
+       <mat-form-field class="col-md-6" >
+        <mat-label>Fecha Fin</mat-label>
+        <input matInput [matDatepicker]="fechaFin" formControlName="fechaFin"/>
+        <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+        <mat-datepicker #fechaFin></mat-datepicker>
+      </mat-form-field>
+    <mat-form-field class="col-md-6" >
+        <mat-label>Profesor</mat-label>
+        <input matInput formControlName="profesor"/>
+      </mat-form-field>
+      <div class="col-md-6" >
+        <mat-slide-toggle  formControlName="inscripcionAbierta"> Inscripcion Abierta</mat-slide-toggle>
+      </div>
+    </div>
+  </form>
+  </div>
+  <div mat-dial class="col-md-12 btn">
+    <button mat-raised-button type="submit" (click)="agregarCurso()">Agregar</button>
+  </div>
+</div>
+
+

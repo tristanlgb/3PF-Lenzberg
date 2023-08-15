@@ -1,0 +1,30 @@
+<mat-toolbar *ngIf="sesion$ | async as sesion" >
+  <h2  align="center"> CURSOS</h2>
+  <button  mat-button class="btn" routerLink="/cursos/agregar"*ngIf="sesion.usuarioActivo?.esAdmin">Agregar Curso</button>
+
+</mat-toolbar>
+<div class="container" *ngIf="sesion$ | async as sesion" >
+
+  <div class="row">
+    <div class="col-md-3 " *ngFor="let curso of cursos$ |async">
+      <mat-card class="card">
+        <mat-card-header class="header">
+          <mat-card-title class="title">{{ curso.nombre}}</mat-card-title>
+        </mat-card-header>
+        <img class="card-imagen" mat-card-image src="https://bffct.org/bff/wp-content/uploads/2018/02/chakra-chanting-400x400.jpg" alt="">
+        <mat-card-content align="center" style="margin: 15px;">
+          <p>{{ curso.inscripcionAbierta | booleanoATexto: 'Inscripciones abiertas' : 'Inscripciones cerradas' }}</p>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+          <button class="btn" (click)="detalleCurso(curso)">Mas Detalles</button>
+          <div class="action">
+            <button  (click)="editarCursoDialog(curso)"*ngIf="sesion.usuarioActivo?.esAdmin" >Editar</button>
+          <button  (click)="eliminarCurso(curso)" *ngIf="sesion.usuarioActivo?.esAdmin">Eliminar</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+  </div>
+

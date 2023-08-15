@@ -1,0 +1,21 @@
+mat-toolbar{
+  background-color:#62eb9b;
+  display:flex;
+  justify-content: space-between;
+  color: #bfd350;
+  align-items: center;
+}
+mat-toolbar button{
+  margin-right: 120px;
+}
+mat-toolbar h2{
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+
+.mat-mdc-form-field {
+  font-size: 8px;
+  width: 60%;
+}
+
