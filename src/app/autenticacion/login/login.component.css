@@ -1,0 +1,21 @@
+.container{
+  width: 50%;
+  margin-left: 80px;
+  color: #62eb9b;
+}
+mat-form-field {
+  color: #62eb9b;
+}
+
+.fill{
+  width: 100%;
+  color: #62eb9b;
+}
+
+.btn{
+  width: 180px;
+  height: 50px;
+  padding: 20px;
+  background-color: #62eb9b;
+  color: #ffffff;
+}

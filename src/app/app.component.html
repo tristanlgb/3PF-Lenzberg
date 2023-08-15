@@ -1,0 +1,36 @@
+<mat-drawer-container class="example-container mat-typography"  *ngIf="sesion$ | async as sesion" >
+    <mat-drawer  #drawer mode="side" disableClose="true" opened="true"  *ngIf="sesion.sesionActiva" >
+      <p class="marca">MisCursosHolisticos.com</p>
+      <mat-nav-list >
+      <mat-list-item >
+        <div class="mat-list" routerLink="inicio" (click)="logout()" >
+          <mat-icon mat-list-icon>home</mat-icon>
+          <h4  class="item-list"  >Inicio</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item >
+        <div class="mat-list" routerLink="/alumnos/tabla">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <h4 class="item-list" >Alumnos</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div class="mat-list" routerLink="/cursos/card">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <h4 class="item-list" >Cursos</h4>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item class="list-item">
+        <div class="mat-list" routerLink="/auth/login">
+          <mat-icon  mat-list-icon>account_circle</mat-icon>
+        <h4  class="item-list" > Nombre</h4>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+	</mat-drawer>
+
+  <router-outlet></router-outlet>
+
+</mat-drawer-container>
+

@@ -1,0 +1,25 @@
+<div  class="position-absolute top-50 start-50 translate-middle container " >
+  <h1 class="col-md-10" align="center">INICIAR SESION</h1>
+<form [formGroup]="formulario" (ngSubmit)="login()" align="center">
+  <div class="row">
+    <div class="col-md-10">
+      <mat-form-field appearance="outline" class="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" formControlName="usuario">
+    </mat-form-field>
+    </div>
+    <div class="col-md-10">
+      <mat-form-field appearance="outline" class="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="text" formControlName="contrasena">
+      </mat-form-field>
+    </div>
+    <div class="col-md-10" align="start" >
+      <mat-slide-toggle formControlName="esAdmin" >Es administrador</mat-slide-toggle>
+    </div>
+    <div class="col-md-10" align="center" >
+      <button type="submit" mat-raised-button class="btn">Entrar</button>
+    </div>
+  </div>
+</form>
+</div>
